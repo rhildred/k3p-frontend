@@ -3,7 +3,8 @@ import { Hono } from 'hono'
 const app = new Hono()
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  const sHost:string = c.req.header('Host')!;
+  return c.text(`Hello ${sHost}!`)
 })
 
 export default app

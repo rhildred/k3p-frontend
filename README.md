@@ -13,9 +13,13 @@ or to run in the debugger
 ```bash
 ```
 
+To deploy this to cloudflare workers run:
+
 ```bash
 npm run deploy
 ```
+
+You will need to login with wrangler to your cloudflare account. You need to add a `*` cname for your cloudflare worker, and a route to your worker `*.k3p.io/*` for instance. 
 
 This serves static code that is uploaded as a .zip at deployment time to a cloudflare r2 bucket folder with the same name as the host header. Meta information, like the backend to proxy to is stored in a .env file in the usual format.
 
